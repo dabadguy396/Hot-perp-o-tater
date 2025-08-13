@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hop Perp-tato</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f2ec;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #d35400;
+            color: white;
+            padding: 15px;
+        }
+        #scenario, #response {
+            margin: 20px;
+            font-size: 1.2em;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1em;
+            background-color: #d35400;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        button:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hop Perp-tato 🥔</h1>
+    <div id="scenario">Click "New Scenario" to start the game!</div>
+    <div id="response"></div>
+    <button onclick="newScenario()">New Scenario</button>
+    <button onclick="answerScenario()">Give Response</button>
+
+    <script>
+        const scenarios = [
+            "A man robs a bank in Indianapolis.",
+            "A thief steals a car from a Muncie parking lot.",
+            "Someone hacks into a small business's computer system.",
+            "A suspect smuggles rare animals into Indiana.",
+            "A person shoplifts from a convenience store."
+        ];
+
+        const responses = [
+            "Security cameras capture the suspect.",
+            "Fingerprints are found at the scene.",
+            "A witness identifies them.",
+            "Police track cell phone location.",
+            "DNA evidence links them to the crime."
+        ];
+
+        function newScenario() {
+            const randomIndex = Math.floor(Math.random() * scenarios.length);
+            document.getElementById("scenario").textContent = scenarios[randomIndex];
+            document.getElementById("response").textContent = "";
+        }
+
+        function answerScenario() {
+            const randomIndex = Math.floor(Math.random() * responses.length);
+            document.getElementById("response").textContent = responses[randomIndex];
+        }
+    </script>
+</body>
+</html>
